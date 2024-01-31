@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<title> Miluju informatiku </title>
+
+<body>
+
+<h1>Nesnaším Tomáše</h1>
+{% if stupen == 1 %}
+    <p>Zabil mého spolužáka</p>
+{% else %}
+    {% ifstupen == 2, 3, 4 %}
+        <p>Zabil {{stupen}} mé spolužáky</p>
+{% else %} 
+    <p>Zabil {{stupen}} mých spolužáků</p>
+
+</body>
+</html>
