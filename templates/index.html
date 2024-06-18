@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote for Your Favorite Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .team {
+            margin: 20px 0;
+        }
+        .team button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .team span {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Vote for Your Favorite Team</h1>
+
+{% for team in teams %}
+<div class="team">
+    <form action="/vote" method="post">
+        <input type="hidden" name="team" value="{{ team.name }}">
+        <button type="submit">{{ team.name }}</button>
+    </form>
+    <span>Votes: {{ team.votes }}</span>
+</div>
+{% endfor %}
+
+</body>
+</html>
